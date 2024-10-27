@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import {computed, ref} from "vue";
+import {ref} from "vue";
 import {_debounce} from "@/tools/Tools";
-import {type Food, NO_RESULTS_MESSAGE} from "@/helpers/listFood-types";
+import {type Food } from "@/helpers/listFood-types";
 import FoodResult from "@/components/FoodResult.vue";
 
 const props = defineProps<{
@@ -19,10 +19,6 @@ const debouncedSearch = _debounce((term: string) => {
     isLoading.value = false;
 
 }, 300);
-
-const noResultsMessage = computed<string>(() => {
-    return foodResult.value.length === 0 ? NO_RESULTS_MESSAGE : ''
-})
 
 const handleInput = (event: Event): void => {
     isLoading.value = true;
@@ -44,8 +40,5 @@ const handleInput = (event: Event): void => {
             :isLoading="isLoading"
             :onInput="handleInput"
         />
-        <p>
-            {{ noResultsMessage }}
-        </p>
     </div>
 </template>
