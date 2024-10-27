@@ -1,11 +1,15 @@
 <script setup lang="ts">
-import { RouterLink, RouterView } from 'vue-router'
-import HelloWorld from './components/HelloWorld.vue'
+import { RouterView } from 'vue-router'
 </script>
 
 <template>
-  <RouterView />
+    <div class="main">
+        <RouterView />
+    </div>
 </template>
 
 <style scoped>
+.main {
+    padding: 3rem;
+}
 </style>
