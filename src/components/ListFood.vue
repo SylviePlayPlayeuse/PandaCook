@@ -1,14 +1,17 @@
 <script setup lang="ts">
-import {computed, ref} from "vue";
+import {computed, onMounted, ref} from "vue";
 import {_debounce} from "@/tools/Tools";
-import {type Food } from "@/helpers/listFood-types";
+import {type Food, NO_RESULTS_MESSAGE} from "@/helpers/listFood-types";
 import {getInitialFood} from "@/api/food.api";
 
-const initialFood = getInitialFood();
-
-const listFood = ref<Food[]>(initialFood);
-const foodResult = ref<Food[]>(initialFood);
+const listFood = ref<Food[]>([]);
+const foodResult = ref<Food[]>([]);
 const isLoading = ref<boolean>(false);
+
+const initializeFood = (newListFood: Food[]) => {
+    listFood.value = newListFood;
+    foodResult.value = newListFood;
+}
 
 const debouncedSearch = _debounce((term: string) => {
     foodResult.value = listFood.value.filter((food) => {
@@ -19,7 +22,7 @@ const debouncedSearch = _debounce((term: string) => {
 }, 300);
 
 const noResultsMessage = computed(() => {
-    return foodResult.value.length === 0 ? 'Oops, pas de résultats' : ''
+    return foodResult.value.length === 0 ? NO_RESULTS_MESSAGE : ''
 })
 
 const handleInput = (event: Event) => {
@@ -27,6 +30,11 @@ const handleInput = (event: Event) => {
     const target = event.target as HTMLInputElement;
     debouncedSearch(target.value);
 }
+
+onMounted(async () => {
+    const initialFood: Food[] = await getInitialFood();
+    initializeFood(initialFood)
+})
 
 </script>
 
