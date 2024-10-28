@@ -9,7 +9,4 @@ import { RouterView } from 'vue-router'
 </template>
 
 <style scoped>
-.main {
-    padding: 3rem;
-}
 </style>
