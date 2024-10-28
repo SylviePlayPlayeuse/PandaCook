@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import {type Food, NO_RESULTS_MESSAGE} from "@/helpers/listFood-types";
 import {computed} from "vue";
+import SearchInput from "@/components/SearchInput.vue";
 
 const props = defineProps<{
     foodResult: Food[];
@@ -15,21 +16,36 @@ const noResultsMessage = computed<string>(() => {
 </script>
 
 <template>
-    <input type="text" @input="onInput" placeholder="...Filtrer"/>
+    <SearchInput :onInput="onInput" />
     <Transition name="fade" mode="out-in">
-        <div key="loading" v-if="isLoading">
-            is loading ...
-        </div>
-        <template v-else>
-            <ul key="result" v-if="foodResult.length > 0">
-                <li v-for="food in foodResult" :key="food.name">
-                    {{ food.name }} - {{ food.price }}
-                </li>
-            </ul>
-            <p key="noResult" v-else>
-                {{ noResultsMessage }}
-            </p>
-        </template>
+        <v-card
+            class="mx-auto"
+            max-width="300"
+        >
+            <v-list-subheader>Résultat</v-list-subheader>
+            <div key="loading" v-if="isLoading">
+                Chargement en cours ...
+            </div>
+            <template v-else>
+                <section v-if="foodResult.length > 0" aria-label="Résultats de la recherche">
+                        <v-list
+                            :items="foodResult"
+                            item-title="name"
+                            item-value="name"
+                        >
+                            <v-list-item v-for="food in foodResult" :key="food.name">
+                                <v-list-item-title v-text="food.name" />
+                                <v-list-item-title>{{ food.price }}€</v-list-item-title>
+                            </v-list-item>
+                        </v-list>
+                </section>
+                <section v-else aria-label="Aucun résultat">
+                    <p>
+                        {{ noResultsMessage }}
+                    </p>
+                </section>
+            </template>
+        </v-card>
     </Transition>
 </template>
 
