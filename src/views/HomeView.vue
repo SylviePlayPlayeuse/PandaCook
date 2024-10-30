@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { mdiAccount } from '@mdi/js'
 </script>
 
 <template>
@@ -10,8 +11,12 @@
             </section>
             <section class="grid-section">
                 <div class="grid-item" v-for="n in 6" :key="n">
-                    <div class="image-placeholder">IMAGE</div>
-                    <p class="text-placeholder">TEXT</p>
+                    <div class="image-placeholder">IMAGE
+                    </div>
+
+                    <p class="text-placeholder">TEXT
+                        <v-icon :icon="mdiAccount" />
+                    </p>
                 </div>
             </section>
         </main>
