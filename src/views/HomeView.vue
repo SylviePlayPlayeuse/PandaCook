@@ -25,7 +25,7 @@
     </div>
 </template>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .container  {
     display: grid;
     grid-template-rows: 1fr auto auto; // En premier et en dernier l'espace nécessaire pour le header et le footer,
