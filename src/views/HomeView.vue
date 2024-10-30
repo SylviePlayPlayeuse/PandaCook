@@ -30,7 +30,7 @@
     display: grid;
     grid-template-rows: 1fr auto auto; // En premier et en dernier l'espace nécessaire pour le header et le footer,
     // en 2e l'espace qui reste
-    min-height: calc(100vh - 10rem); // 10rem -> hauteur du header
+    min-height: calc(100vh - 12rem); // 12rem -> hauteur du header
 
     .main-content {
         padding: 2rem;

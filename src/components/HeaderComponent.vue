@@ -24,8 +24,9 @@
     display: flex;
     flex-direction: column;
     gap: 3rem;
-    padding: 1rem;
     height: 10rem;
+    margin-bottom: 2rem;
+    padding: 1rem;
 
     .logo {
         font-size: 2rem;
