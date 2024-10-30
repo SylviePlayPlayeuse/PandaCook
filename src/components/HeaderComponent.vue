@@ -6,9 +6,9 @@
         <section class="menu">
             <nav>
                 <ul>
-                    <li><a href="">Home</a></li>
-                    <li><a href="">Recettes</a></li>
-                    <li><a href="">A propos</a></li>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/recipe">Recettes</a></li>
+                    <li><a href="/addRecipe">Ajouter une recette</a></li>
                     <li><a href="">Contact</a></li>
                 </ul>
             </nav>
