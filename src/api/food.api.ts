@@ -1,4 +1,7 @@
 import type {Food} from "@/helpers/listFood-types";
+import axios from 'axios';
+import recipesData from '@/fakeData/recipes.json';
+
 
 export const getInitialFood = (): Promise<Food[]> => {
     return Promise.resolve(
@@ -9,3 +12,15 @@ export const getInitialFood = (): Promise<Food[]> => {
         ]
     )
 }
+
+
+const API_URL = 'http://localhost:3000/fakeData/recipes.json';
+
+export const getRecipes = async () => {
+    try {
+        return Promise.resolve(recipesData.recipes);
+    } catch (error) {
+        console.error("Erreur lors de la récupération des recettes :", error);
+        throw error;
+    }
+};

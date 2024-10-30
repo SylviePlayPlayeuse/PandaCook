@@ -5,3 +5,12 @@ export interface Food  {
 }
 
 export const NO_RESULTS_MESSAGE = 'Oops, pas de résultats'
+
+export interface Recipe {
+    id: number;
+    title: string;
+    rating: number;
+    description: string;
+    ingredients: string[];
+    prepTime: string;
+}

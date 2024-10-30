@@ -1,5 +1,24 @@
 <script setup lang="ts">
-import { mdiAccount } from '@mdi/js'
+import { mdiStar, mdiStarOutline } from '@mdi/js';
+import {getRecipes} from "@/api/food.api";
+import {onMounted, ref} from "vue";
+import type {Recipe} from "@/helpers/listFood-types";
+
+const TOTAL_STARS = 5;
+
+const recipes = ref<Recipe[]>([]);
+const getAllRecipes = async() => {
+    recipes.value = await getRecipes();
+}
+
+const getEmptyStars = (number: number): number => {
+    return TOTAL_STARS - number;
+}
+
+onMounted(() => {
+    getAllRecipes();
+})
+
 </script>
 
 <template>
@@ -10,12 +29,15 @@ import { mdiAccount } from '@mdi/js'
                 <p>Intro</p>
             </section>
             <section class="grid-section">
-                <div class="grid-item" v-for="n in 6" :key="n">
+                <div class="grid-item" v-for="recipe in recipes" :key="recipe.id">
                     <div class="image-placeholder">IMAGE
                     </div>
-
-                    <p class="text-placeholder">TEXT
-                        <v-icon :icon="mdiAccount" />
+                    <div>
+                        <v-icon v-for="n in recipe.rating" :icon="mdiStar" />
+                        <v-icon v-for="n in getEmptyStars(recipe.rating)" :icon="mdiStarOutline" />
+                    </div>
+                    <p class="text-placeholder">
+                        {{ recipe.description }}
                     </p>
                 </div>
             </section>

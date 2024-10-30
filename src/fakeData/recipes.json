@@ -1,0 +1,101 @@
+{
+  "recipes": [
+    {
+      "id": 1,
+      "title": "Bibimbap",
+      "rating": 5,
+      "description": "Un bol de riz coréen coloré et nutritif, garni de légumes variés, d'un œuf et de viande (optionnelle), accompagné d'une sauce épicée au gochujang (pâte de piment).",
+      "ingredients": [
+        "200g de riz cuit",
+        "100g de bœuf émincé (optionnel)",
+        "1 carotte en julienne",
+        "1 courgette en julienne",
+        "50g de pousses d'épinards",
+        "1 œuf",
+        "1 cuillère à soupe de pâte de piment (gochujang)",
+        "1 cuillère à soupe d'huile de sésame",
+        "Graines de sésame pour la garniture"
+      ],
+      "prepTime": "25 minutes"
+    },
+    {
+      "id": 2,
+      "title": "Kimchi Jjigae",
+      "rating": 4,
+      "description": "Un ragoût épicé et savoureux, préparé avec du kimchi fermenté, du tofu et parfois du porc, idéal pour réchauffer les soirées fraîches.",
+      "ingredients": [
+        "200g de kimchi",
+        "100g de porc en tranches fines",
+        "100g de tofu coupé en cubes",
+        "1 oignon émincé",
+        "2 tasses d'eau",
+        "1 cuillère à soupe de gochugaru (poudre de piment)",
+        "1 cuillère à soupe de sauce soja"
+      ],
+      "prepTime": "30 minutes"
+    },
+    {
+      "id": 3,
+      "title": "Tteokbokki",
+      "rating": 4,
+      "description": "Ce plat de rue coréen emblématique est composé de tteok (gâteaux de riz) moelleux en sauce épicée et sucrée.",
+      "ingredients": [
+        "200g de gâteaux de riz coréens",
+        "1 oignon vert coupé en tronçons",
+        "1 cuillère à soupe de gochujang",
+        "1 cuillère à soupe de sucre",
+        "1 tasse d'eau",
+        "1 œuf dur pour la garniture (optionnel)"
+      ],
+      "prepTime": "20 minutes"
+    },
+    {
+      "id": 4,
+      "title": "Japchae",
+      "rating": 5,
+      "description": "Des nouilles de patate douce sautées avec des légumes variés, de la viande, et assaisonnées de sauce soja et d'huile de sésame.",
+      "ingredients": [
+        "200g de nouilles de patate douce (dangmyeon)",
+        "1 carotte en julienne",
+        "1/2 poivron rouge en lamelles",
+        "100g de bœuf émincé (optionnel)",
+        "1 oignon émincé",
+        "2 cuillères à soupe de sauce soja",
+        "1 cuillère à soupe d'huile de sésame",
+        "Graines de sésame pour la garniture"
+      ],
+      "prepTime": "30 minutes"
+    },
+    {
+      "id": 5,
+      "title": "Bulgogi",
+      "rating": 5,
+      "description": "Des tranches fines de bœuf marinées et grillées, douces et juteuses, servies avec du riz et des légumes frais.",
+      "ingredients": [
+        "200g de bœuf émincé (de préférence du faux-filet)",
+        "1 poire coréenne râpée",
+        "2 cuillères à soupe de sauce soja",
+        "1 cuillère à soupe de sucre",
+        "1 gousse d'ail hachée",
+        "1 cuillère à soupe d'huile de sésame",
+        "Oignons verts pour la garniture"
+      ],
+      "prepTime": "40 minutes (incluant la marinade)"
+    },
+    {
+      "id": 6,
+      "title": "Kimchi Bokkeumbap",
+      "rating": 4,
+      "description": "Un riz sauté au kimchi rapide et facile, relevé et parfumé, idéal pour les repas rapides et savoureux.",
+      "ingredients": [
+        "200g de riz cuit",
+        "100g de kimchi haché",
+        "1 œuf",
+        "1 oignon vert émincé",
+        "1 cuillère à soupe de sauce soja",
+        "1 cuillère à soupe d'huile de sésame"
+      ],
+      "prepTime": "15 minutes"
+    }
+  ]
+}
