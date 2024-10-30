@@ -3,27 +3,13 @@
 
 <template>
     <div class="container">
-        <header class="header">
-            <section class="logo">
-               <div>Logo</div>
-            </section>
-            <section class="menu">
-                <nav>
-                    <ul>
-                        <li><a href="">Home</a></li>
-                        <li><a href="">Recettes</a></li>
-                        <li><a href="">A propos</a></li>
-                        <li><a href="">Contact</a></li>
-                    </ul>
-                </nav>
-            </section>
-        </header>
+
         <main class="main-content">
             <section class="intro">
                 <p>Intro</p>
             </section>
             <section class="grid-section">
-                <div class="grid-item" v-for="n in 6" key="n">
+                <div class="grid-item" v-for="n in 6" :key="n">
                     <div class="image-placeholder">IMAGE</div>
                     <p class="text-placeholder">TEXT</p>
                 </div>
@@ -42,38 +28,9 @@
 <style lang="scss">
 .container  {
     display: grid;
-    grid-template-rows: auto 1fr auto auto; // En premier et en dernier l'espace nécessaire pour le header et le footer,
+    grid-template-rows: 1fr auto auto; // En premier et en dernier l'espace nécessaire pour le header et le footer,
     // en 2e l'espace qui reste
-    min-height: 100vh;
-
-    .header {
-        align-items: center;
-        background-color: #333;
-        color: #fff;
-        display: flex;
-        flex-direction: column;
-        padding: 1rem;
-    }
-
-    .logo {
-        font-size: 2rem;
-        margin-bottom: 0.5rem;
-    }
-
-    .menu {
-        ul {
-            display: flex;
-            gap: 1.5rem;
-            list-style: none;
-            padding: 0;
-
-            li a {
-                color: #fff;
-                font-weight: bold;
-                text-decoration: none;
-            }
-        }
-    }
+    min-height: calc(100vh - 10rem); // 10rem -> hauteur du header
 
     .main-content {
         padding: 2rem;
